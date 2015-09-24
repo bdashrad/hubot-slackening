@@ -16,7 +16,7 @@
 querystring = require 'querystring';
 
 module.exports = (robot) ->
-  robot.respond /cast (.+)/i, (msg) ->
+  robot.respond /(cast|gather|gatherer) (.+)/i, (msg) ->
     url = "http://gatherer.wizards.com/Handlers/Image.ashx"
     card = msg.match[1] || "Dismal%20Failure"
     query = { type: "card", name: card }
